@@ -40,7 +40,6 @@ public class Kassa {
 		System.out.println("Factuurspecificatie:");
 		System.out.println("75% - €" + jajusPot + " gaat naar JavJus BV.\n5% - €" + wsPot
 				+ " gaat naar de Trainees van WS\n20% - €" + totaleOmzet + " gaat naar het festival");
-		totaalOverzicht();
 
 	}
 
@@ -51,7 +50,7 @@ public class Kassa {
 	public int startKaartverkoop() {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
-			System.out.println("Hoeveel kaartjes wilt u kopen?");
+			System.out.println("Een kaart kost €" + prijsKaart + " p.p.\nHoeveel kaartjes wilt u kopen?");
 			try {
 				int inputAantal = scanner.nextInt();
 				if (inputAantal == 0) {
