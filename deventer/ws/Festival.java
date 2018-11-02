@@ -45,22 +45,51 @@ public class Festival {
 		podia.get(0).setArtiesten(wham, backstreetBoys, eminem);
 		podia.get(1).setArtiesten(k3, rammstein, biebster );
 		podia.get(2).setArtiesten(spiceGirls, metallica, tiesto);
+		programmaPrinten();
+		Kassa.getInstance().starten(50);
 		Scanner sc = new Scanner(System.in);
 		System.out.printf("Wil je kaartjes kopen voor %s, tik 'j' om kaartjes te kopen en 'n' om geen kaartjes te kopen\n", this.naam);
 		String kaartjeJaNee= sc.nextLine();
 		if (kaartjeJaNee.equals("j")){
 		Kassa.getInstance().startKaartverkoop();
+		System.out.println("Welk podium gaan jullie bezoeken?");
+		System.out.println("Kies 1. voor podium Fout, 2. voor podium Fouter, 3. voor podium Foutst");
+		String bezoek=sc.nextLine();
+		if (bezoek.equals("1")){
+			podia.get(0).verwelkomArtiest();
+		} else if (bezoek.equals("2")) {
+			podia.get(1).verwelkomArtiest();
+		} else {
+			podia.get(2).verwelkomArtiest();
+		}
+		
 		}
 	}
 	
-	void programmaprinten() {
+	void programmaPrinten() {
+		System.out.println("Dit is het programma");
 		for (Podium p: podia) {
-			//for (Artiest a:p.) {
-		//		System.out.println(a.naam + " speelt op " + p.naam);
-		//	}
+			for (int x=0; x<3; x++) {
+				if (x==0) {
+			 System.out.println(p.artiesten.get(x).naam+ " treedt op om 20:00u op podium "+p.naam);
+				} else if (x==1) {
+					System.out.println(p.artiesten.get(x).naam+ " treedt op om 21:00u op podium "+p.naam);	
+				} else {
+					System.out.println(p.artiesten.get(x).naam+ " treedt op om 22:00u op podium "+p.naam);
+				}
+			} System.out.println();
 		}
 	}
-	
+/*	 void maakKeuze() {
+		 Kassa.getInstance().starten(50);
+			Scanner sc = new Scanner(System.in);
+			System.out.printf("Wil je kaartjes kopen voor %s, tik 'j' om kaartjes te kopen en 'n' om geen kaartjes te kopen\n", this.naam);
+			String kaartjeJaNee= sc.nextLine();
+			if (kaartjeJaNee.equals("j")){
+			Kassa.getInstance().startKaartverkoop();
+			}
+	 }
+*/	
 	
 	Festival(String nm, String cat){
 		naam = nm;
