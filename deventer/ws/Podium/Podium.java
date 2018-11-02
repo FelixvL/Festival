@@ -1,11 +1,11 @@
 package deventer.ws.Podium;
+import deventer.ws.*;
 
 abstract class Podium {
-	// Artiest artiest;
-	String naam;
-	final int capaciteit;
-	int aantalMensenBinnen;
-	boolean heeftLichtshow, isBinnen;
+	public String naam;
+	public final int capaciteit;
+	public int aantalMensenBinnen;
+	public boolean heeftLichtshow, isBinnen;
 
 	public void starten() {					
 		//onze tijdelijke main.
@@ -36,8 +36,13 @@ abstract class Podium {
 		}
 	}
 
-	public void verwelkomArtiest() {
-
+	public void verwelkomArtiest(Artiest artiest, Festival festival) {
+		//System.out.printf("Welkom %s op %s! Je staat op het %s.%nDe volgende nummers gaan gespeeld worden:", artiest.naam, festival.naam, naam);
+		
+		//for(Liedje x: artiest.setlist) {
+		//	System.out.print(x + " ");
+		//}
+		
+		System.out.println("*applaus*");
 	}
-
 }
