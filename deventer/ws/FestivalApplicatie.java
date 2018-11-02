@@ -1,5 +1,6 @@
 package deventer.ws;
 
+import deventer.ws.KassaSysteem.Kassa;
 import deventer.ws.Podium.Podium1;
 
 public class FestivalApplicatie{
