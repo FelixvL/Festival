@@ -1,7 +1,7 @@
 package deventer.ws.Podium;
 import deventer.ws.*;
 
-abstract class Podium {
+public class Podium {
 	public String naam;
 	public final int capaciteit;
 	public int aantalMensenBinnen;
