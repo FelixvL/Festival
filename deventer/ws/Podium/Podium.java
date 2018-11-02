@@ -1,17 +1,18 @@
 package deventer.ws.Podium;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import deventer.ws.*;
 
 public class Podium {
+	Scanner sc = new Scanner(System.in);
 	public ArrayList<Artiest> artiesten = new ArrayList<>();
 	public String naam;
 	public int aantalMensenBinnen;
 	public boolean heeftLichtshow, isBinnen;
 
-	public void starten() {	
-		
-//		verwelkomArtiest();
+	public void starten() {
+		verwelkomArtiest();
 		toonArtiesten();
 	}
 
@@ -25,28 +26,30 @@ public class Podium {
 		System.out.printf("Podium %s wordt opgebouwd. %nEr kunnen %s mensen binnenkomen.%n", naam, capaciteit);
 	}
 
-	public void binnenkomen() {
-		if (aantalMensenBinnen >= 3) {
-			System.out.println("Helaas, het is vol.");
-		} else {
-			System.out.printf("Welkom bij %s", naam);
-			aantalMensenBinnen++;
+//	public void binnenkomen() {
+//		if (aantalMensenBinnen >= 3) {
+//			System.out.println("Helaas, het is vol.");
+//		} else {
+//			System.out.printf("Welkom bij %s", naam);
+//			aantalMensenBinnen++;
+//		}
+//	}
+//
+//	public void verlaten() {
+//		if (aantalMensenBinnen > 0) {
+//			System.out.println("Tot ziens!");
+//			aantalMensenBinnen--;
+//		}
+//	}
+
+	public void verwelkomArtiest() {
+		for(int i = 0; i < artiesten.size(); i ++) {
+			System.out.printf("Welkom %s! Je staat op het podium %s.", artiesten.get(i).naam, naam);
+			artiesten.get(i).optreden();
+			System.out.println("*applaus*");
+			System.out.println("Druk op enter voor het volgende optreden");
+			sc.nextLine();
 		}
-	}
-
-	public void verlaten() {
-		if (aantalMensenBinnen > 0) {
-			System.out.println("Tot ziens!");
-			aantalMensenBinnen--;
-		}
-	}
-
-	public void verwelkomArtiest(Artiest artiest, Festival festival) {
-//		System.out.printf("Welkom %s op %s! Je staat op het %s.", artiest.naam, festival.naam, naam);
-//	
-//		artiest.optreden();
-
-		System.out.println("*applaus*");
 	}
 	
 	public void setArtiesten(Artiest artiest1, Artiest artiest2, Artiest artiest3) {
@@ -57,7 +60,7 @@ public class Podium {
 	
 	public void toonArtiesten() {
 		for(int i = 0; i < artiesten.size(); i++) {
-//			System.out.println("Op " + naam + " speelt " + artiesten.get(i).naam);
+			System.out.println("Op " + naam + " speelt " + artiesten.get(i).naam);
 		}
 	}
 }
