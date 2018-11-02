@@ -6,6 +6,6 @@ public class FestivalApplicatie{
 		new Podium().starten();
 		new Artiest("Eminem").starten();
 		Kassa.getInstance().starten(50);
-		new Festival.organiseren();
+		new Festival().organiseren();
 	}
 }
