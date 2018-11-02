@@ -1,27 +1,32 @@
 package deventer.ws.Podium;
+import java.util.ArrayList;
+
 import deventer.ws.*;
 
 public class Podium {
+	public ArrayList<Artiest> artiesten = new ArrayList<>();
 	public String naam;
-	public final int capaciteit;
 	public int aantalMensenBinnen;
 	public boolean heeftLichtshow, isBinnen;
 
-	public void starten() {					
-		//onze tijdelijke main.
+	public void starten() {	
 		
-		//Podium podium = new Podium1("Hoofdpodium", 102);
-		//Podium podium2 = new Podium1("Hoofdpodium", 3);
+//		verwelkomArtiest();
+		toonArtiesten();
 	}
 
+	public Podium(String naam) {
+		this.naam = naam;
+		System.out.printf("Podium %s wordt opgebouwd. %n", naam);
+	}
+	
 	public Podium(String naam, int capaciteit) {
 		this.naam = naam;
-		this.capaciteit = capaciteit;
 		System.out.printf("Podium %s wordt opgebouwd. %nEr kunnen %s mensen binnenkomen.%n", naam, capaciteit);
 	}
 
 	public void binnenkomen() {
-		if (aantalMensenBinnen >= capaciteit) {
+		if (aantalMensenBinnen >= 3) {
 			System.out.println("Helaas, het is vol.");
 		} else {
 			System.out.printf("Welkom bij %s", naam);
@@ -37,12 +42,22 @@ public class Podium {
 	}
 
 	public void verwelkomArtiest(Artiest artiest, Festival festival) {
-		//System.out.printf("Welkom %s op %s! Je staat op het %s.%nDe volgende nummers gaan gespeeld worden:", artiest.naam, festival.naam, naam);
-		
-		//for(Liedje x: artiest.setlist) {
-		//	System.out.print(x + " ");
-		//}
-		
+//		System.out.printf("Welkom %s op %s! Je staat op het %s.", artiest.naam, festival.naam, naam);
+//	
+//		artiest.optreden();
+
 		System.out.println("*applaus*");
+	}
+	
+	public void setArtiesten(Artiest artiest1, Artiest artiest2, Artiest artiest3) {
+			artiesten.add(artiest1);
+			artiesten.add(artiest2);
+			artiesten.add(artiest3);
+	}
+	
+	public void toonArtiesten() {
+		for(int i = 0; i < artiesten.size(); i++) {
+//			System.out.println("Op " + naam + " speelt " + artiesten.get(i).naam);
+		}
 	}
 }
