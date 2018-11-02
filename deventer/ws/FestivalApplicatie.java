@@ -8,7 +8,7 @@ public class FestivalApplicatie{
 	//	System.out.println("gaaf");
 	//	new Podium1("Podium",500).starten();
 		new Artiest("Eminem").starten();
-	//	Kassa.getInstance().starten(50);
+		Kassa.getInstance().starten(50);
 	//	new Festival().organiseren();
 	}
 }
